@@ -123,9 +123,13 @@ a{
     color: inherit;
 }
 
-#link:hover{
+#link{
     border-style: solid;
     border-width: 0 0 1px 0;
+}
+
+#link:hover{
+    opacity: 50%;
 }
 
 .P{
@@ -205,19 +209,19 @@ img{
 
 .imageproject{
     width: 100%;
-    margin-bottom: var(--margin);
+    margin-bottom: calc(var(--bottom-margin));
 }
 
 .imageproject-right{
     float: right;
-    width: calc(50% - var(--bottom-margin));
-    margin-bottom: var(--margin);
+    width: calc(50% - (var(--bottom-margin) / 2 ));
+    margin-bottom: calc(var(--bottom-margin));
 }
 
 .imageproject-left{
     float: left;
-    width: calc(50% - var(--bottom-margin));
-    margin-bottom: var(--margin);
+    width: calc(50% - (var(--bottom-margin) / 2 ));
+    margin-bottom: calc(var(--bottom-margin));
 }
 
 .cover-left{
