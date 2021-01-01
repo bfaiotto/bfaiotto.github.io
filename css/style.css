@@ -76,7 +76,6 @@ body.en :lang(pt) {
 body {
     font-family: Work Sans;
     font-weight: 400;
-    line-height: 1.1;
     color: var(--corescura);
     background-color: var(--corclara);
     padding: 3vw;
@@ -113,8 +112,10 @@ body {
 
 
 #destaque{
-
     font-weight: 600;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    cursor: pointer;
 }
 
 
@@ -132,42 +133,50 @@ a{
     opacity: 50%;
 }
 
-.P{
+.PPP{
+    line-height: 1.2em;
+    font-size: 0.6em;
+    letter-spacing: -0.01em;
+}
+
+.PP{
     line-height: 1.2em;
     font-size: 0.7em;
     letter-spacing: -0.01em;
 }
 
-.M{
+.P{
     font-size: .95em;
     line-height: 1.2em;
     letter-spacing: -0.03em;
 
 }
 
-.MM{
+.M{
     font-size: 1.5em;
     line-height: 1.2em;
-    letter-spacing: -0.03em;
+/*    letter-spacing: -0.03em;*/
 }
 
 .G{
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1em;
-    letter-spacing: -0.05em;
+/*    letter-spacing: -0.05em;*/
     font-weight: 400;
 }
 
 .GG{
     font-size: 5em;
     line-height: 1.25em;
-    letter-spacing: -0.05em;
+/*    letter-spacing: -0.05em;*/
 }
 
+/*
 footer{
     position: fixed;
     bottom: 3vw;
 }
+*/
 
 #previous{
     float: left;
@@ -188,8 +197,7 @@ img{
 
 .photo{
     width: 5vw;
-    margin: -.5vw 0 2vw -.5vw;
-    border-radius: 50%;
+    margin-bottom: -50px;
     -moz-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
@@ -205,6 +213,23 @@ img{
     width: 4vh;
     margin-left: -.5vw;
     position: relative;
+/*    margin-bottom: 7vw;*/
+}
+
+#resume{
+    height: 88vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+[class*="imageproject-"]{
+    width: calc(50% - (var(--bottom-margin) / 2 ));
+    margin-bottom: calc(var(--bottom-margin));
+    position: relative;
+	overflow: hidden;
+    display: inline;
 }
 
 .imageproject{
@@ -214,30 +239,24 @@ img{
 
 .imageproject-right{
     float: right;
-    width: calc(50% - (var(--bottom-margin) / 2 ));
-    margin-bottom: calc(var(--bottom-margin));
 }
 
 .imageproject-left{
     float: left;
-    width: calc(50% - (var(--bottom-margin) / 2 ));
-    margin-bottom: calc(var(--bottom-margin));
+}
+
+.imageproject-center{
+    display: block;
+    margin: auto;
+    max-height: 1080px;
 }
 
 .cover-left{
     float: left;
-    width: calc(50% - var(--bottom-margin));
-    margin-bottom: var(--bottom-margin);
-    position: relative;
-	overflow: hidden;
 }
 
 .cover-right{
-    width: calc(50% - var(--bottom-margin));
     float: right;
-    margin-bottom: var(--bottom-margin);
-    position: relative;
-	overflow: hidden;
 }
 
 #cover{
@@ -249,6 +268,12 @@ img{
 }
 
 [class*="cover-"]{
+    width: calc(50% - var(--bottom-margin));
+    margin-bottom: var(--bottom-margin);
+    position: relative;
+	overflow: hidden;
+    display: inline;
+/*    clear: both;*/
     -moz-transition: all 0.8s ease;
 	-webkit-transition: all 0.8s ease;
 	transition: all 0.8s ease;
@@ -318,6 +343,7 @@ img[id*="emartes"]{
     
     .photo{
     width: 11vw;
+        margin-bottom: 3vw;
     }
     
     #previous{
@@ -332,9 +358,13 @@ img[id*="emartes"]{
     footer {
         position: fixed;
         bottom: 3vw;
+        z-index: 200;
     }
     
-    
+    #resume{
+        display: inherit;
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 700px){
