@@ -37,6 +37,7 @@ ul{
     will-change: contents;
 }
 
+/*
 body.pt :lang(en) { 
     display: none; 
 }
@@ -44,6 +45,7 @@ body.pt :lang(en) {
 body.en :lang(pt) { 
     display: none; 
 }
+*/
 
 /*-----------------ROOTS-----------------*/
 
