@@ -11,7 +11,7 @@ padding:0;
     overflow: scroll;
     overflow-x: hidden;
     -ms-overflow-style: hidden;  /* IE and Edge */
-    scrollbar-width: hidden;  /* Firefox */
+    scrollbar: hidden;  /* Firefox */
 }
 
 img{
@@ -53,7 +53,7 @@ body.en :lang(pt) {
 }
 
 :root{
-    --corclara: lightgray;
+    --corclara: #E5E5E5;
     --corescura: #2C2C2C;
     --bottom-margin: 1.5vw;
     --margin: 3vw;
@@ -196,7 +196,7 @@ img{
 */
 
 .photo{
-    width: 5vw;
+    width: 3vw;
     margin-bottom: -50px;
     -moz-transition: all 1s ease;
     -webkit-transition: all 1s ease;
@@ -210,8 +210,7 @@ img{
 }
 
 .photoproject{
-    width: 4vh;
-    margin-left: -.5vw;
+    width: 3vh;
     position: relative;
 /*    margin-bottom: 7vw;*/
 }
@@ -342,8 +341,13 @@ img[id*="emartes"]{
     }
     
     .photo{
-    width: 11vw;
-        margin-bottom: 3vw;
+        width: 11vw;
+        margin-bottom: 5vw;
+    }
+    
+    .photoproject{
+        width: 4vw;
+        margin-bottom: 5vw;
     }
     
     #previous{
