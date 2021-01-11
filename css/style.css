@@ -97,7 +97,7 @@ body {
 }
 
 .left{
-    height: calc(100vh - 3vw);
+
     width: 15%;
     position: fixed;
 }
@@ -331,6 +331,10 @@ img[id*="emartes"]{
         overflow-y: scroll;
     }
     
+    article{
+        margin: var(--padding) 0;
+    }
+    
     .G{
         font-size: 1.5em;
     }
@@ -343,6 +347,14 @@ img[id*="emartes"]{
 
 @media only screen and (max-width: 1024px){
     
+    #projetos{
+        grid-gap: var(--padding);
+    }
+    
+     article{
+        margin: var(--padding) 0;
+    }
+    
     .content{
     display: contents;
     }
@@ -351,30 +363,29 @@ img[id*="emartes"]{
         position: relative;
         width: 100%;
         height: auto;
-        margin-bottom: 4vw;;
+        overflow: hidden;
     }
     
     .right {
         display: block;
-        margin-bottom: 2vw;
+    }
+    
+    .capas{
+        margin-bottom: var(--padding);;
     }
     
     .imageproject{
         width: 100%;
-        margin-bottom: var(--margin);
+        margin-bottom: var(--padding);
     }
 
     .imageproject-right{
         width: 100%;
-        margin-bottom: var(--margin);
+        margin-bottom: var(--padding);
     }
 
     .imageproject-left{
         width: 100%;
-        margin-bottom: var(--margin);
-    }
-    
-    .photo{
         margin-bottom: var(--padding);
     }
     
@@ -389,7 +400,7 @@ img[id*="emartes"]{
     
     footer {
         position: fixed;
-        bottom: 3vw;
+        bottom: var(--padding);
         z-index: -100;
         mix-blend-mode: difference;
     }
@@ -409,7 +420,12 @@ img[id*="emartes"]{
 }
 
 @media only screen and (max-width: 700px){
+    :root{
+        --padding: 5vw;
+    }
+    
     .capas{
+        margin-bottom: var(--padding);
         -moz-transform: none;
         -webkit-transform: none;
         transform: none;
