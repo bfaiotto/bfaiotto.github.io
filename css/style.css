@@ -64,7 +64,8 @@ body.en :lang(pt) {
     --corescura: #2C2C2C;
     --bottom-margin: 1.5vw;
     --margin: 3vw;
-    --padding: 2.5vw
+    --padding: 2.5vw;
+    --imagespace: 1.5vh;
 }
 
 /*-----------------COLORS-----------------*/
@@ -91,14 +92,13 @@ body {
 
 .content{
     display: grid;
-    grid-template-columns: 15% auto;
+    grid-template-columns: 17% auto;
     grid-gap: 4.5vw;
     grid-template-rows: calc(100vh - var(--margin));
 }
 
 .left{
-
-    width: 15%;
+    width: 17%;
     position: fixed;
 }
 
@@ -114,8 +114,8 @@ body {
 #projetos{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1.5vh;
-    padding-bottom: var(--bottom-margin);
+    grid-gap: var(--imagespace);
+    padding-bottom: calc(var(--padding) - var(--imagespace));
 }
 
 /*-----------------TEXT-----------------*/
@@ -228,10 +228,9 @@ img{
     text-align: left;
 }
 
-
 [class*="imageproject-"]{
-    width: calc(50% - (var(--bottom-margin) / 2 ));
-    margin-bottom: calc(var(--bottom-margin));
+    width: calc(50% - (var(--imagespace) / 2 ));
+    margin-bottom: var(--imagespace);
     position: relative;
 	overflow: hidden;
     display: inline;
@@ -239,7 +238,7 @@ img{
 
 .imageproject{
     width: 100%;
-    margin-bottom: 2vh;
+    margin-bottom: var(--imagespace);
     max-height: 980px;
     object-fit: scale-down;
 }
@@ -256,6 +255,10 @@ img{
     display: block;
     margin: auto;
     max-height: 1080px;
+}
+
+#center{
+    padding-bottom: calc(var(--padding) - var(--imagespace));
 }
 
 #cover-left{
@@ -287,7 +290,7 @@ img{
 
 [class*="capas"]{
 /*    margin-bottom: var(--bottom-margin);*/
-    margin-bottom: 1.5vh;
+    margin-bottom: var(--imagespace);
     display: block;
     position: relative;
 	overflow: hidden;
