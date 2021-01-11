@@ -3,20 +3,25 @@ margin:0;
 padding:0;
 }
 
-.html::-webkit-scrollbar {
-    width: 0 !important;
-    display: none;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .html{
     overflow: auto;
-    overflow: -moz-scrollbars-none;
+    -moz-scrollbars-none;
     -ms-overflow-style: hidden;  /* IE and Edge */
 }
 
 img{
     display: block;
     max-width: 100%;
+    border-radius: 10px;
+}
+
+video{
+    border-radius: 10px;
 }
 
 ul{
@@ -55,10 +60,11 @@ body.en :lang(pt) {
 }
 
 :root{
-    --corclara: #E5E5E5;
+    --corclara: #F3F3F3;
     --corescura: #2C2C2C;
     --bottom-margin: 1.5vw;
     --margin: 3vw;
+    --padding: 2.5vw
 }
 
 /*-----------------COLORS-----------------*/
@@ -80,19 +86,19 @@ body {
     font-weight: 400;
     color: var(--corescura);
     background-color: var(--corclara);
-    padding: 3vw;
+    padding: var(--padding);
 }
 
 .content{
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 15% auto;
     grid-gap: 4.5vw;
     grid-template-rows: calc(100vh - var(--margin));
 }
 
 .left{
     height: calc(100vh - 3vw);
-    width: 20%;
+    width: 15%;
     position: fixed;
 }
 
@@ -106,7 +112,9 @@ body {
 }
 
 #projetos{
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5vh;
     padding-bottom: var(--bottom-margin);
 }
 
@@ -147,9 +155,9 @@ a{
 }
 
 .P{
-    font-size: .95em;
-    line-height: 1.2em;
-    letter-spacing: -0.03em;
+    font-size: .92em;
+    line-height: 1.35em;
+/*    letter-spacing: -0.01em;*/
 
 }
 
@@ -160,10 +168,10 @@ a{
 }
 
 .G{
-    font-size: 2.5em;
+    font-size: 2.1em;
     line-height: 1em;
 /*    letter-spacing: -0.05em;*/
-    font-weight: 400;
+    font-weight: 450;
 }
 
 .GG{
@@ -181,11 +189,12 @@ footer{
 
 #previous{
     float: left;
-    padding-bottom: 3vw;
+    padding-bottom: 2vw;
 }
+
 #next{
     float: right;
-    padding-bottom: 3vw;
+    padding-bottom: 2vw;
 }
 
 /*-----------------IMAGE-----------------*/
@@ -197,11 +206,12 @@ img{
 */
 
 .photo{
-    width: 3vw;
-    margin-bottom: -50px;
-    -moz-transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photoproject{
+    margin-bottom: var(--padding)
 }
 
 .photo.rotate{
@@ -210,17 +220,12 @@ img{
     transform:rotate(720deg);
 }
 
-.photoproject{
-    width: 3vh;
-    position: relative;
-/*    margin-bottom: 7vw;*/
-}
-
 #resume{
-    height: 88vmin;
+    height: calc(100vmin - (2 * var(--padding))) ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: left;
 }
 
 
@@ -234,7 +239,9 @@ img{
 
 .imageproject{
     width: 100%;
-    margin-bottom: calc(var(--bottom-margin));
+    margin-bottom: 2vh;
+    max-height: 980px;
+    object-fit: scale-down;
 }
 
 .imageproject-right{
@@ -251,35 +258,45 @@ img{
     max-height: 1080px;
 }
 
-.cover-left{
-    float: left;
+#cover-left{
+    grid-column-start: 1;
 }
 
-.cover-right{
-    float: right;
+#cover-right{
+    grid-column-start: 2;
 }
 
 #cover{
     width: 100%;
-    margin-bottom: calc(var(--bottom-margin) / 4);
+    z-index: -100;
+/*    margin-bottom: calc(var(--bottom-margin) / 4);*/
     -moz-transition: all 0.8s;
 	-webkit-transition: all 0.8s;
 	transition: all 0.8s;
 }
 
-[class*="cover-"]{
-    width: calc(50% - var(--bottom-margin));
-    margin-bottom: var(--bottom-margin);
+.text{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    text-align: center;
+}
+
+[class*="capas"]{
+/*    margin-bottom: var(--bottom-margin);*/
+    margin-bottom: 1.5vh;
+    display: block;
     position: relative;
 	overflow: hidden;
-    display: inline;
-/*    clear: both;*/
     -moz-transition: all 0.8s ease;
 	-webkit-transition: all 0.8s ease;
 	transition: all 0.8s ease;
 }
 
-[class*="cover-"]:hover{
+.capas:hover{
     -moz-transform: scale(1.03);
     -webkit-transform: scale(1.03);
     transform: scale(1.02);
@@ -303,8 +320,28 @@ img[id*="emartes"]{
 	visibility: visible;
 }*/
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1600px){
     
+    ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+    
+    .left{
+        overflow-y: scroll;
+    }
+    
+    .G{
+        font-size: 1.5em;
+    }
+    
+    .P{
+        font-size: .9em;
+        line-height: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 1024px){
     
     .content{
     display: contents;
@@ -314,15 +351,11 @@ img[id*="emartes"]{
         position: relative;
         width: 100%;
         height: auto;
-        margin-bottom: 6vw;;
+        margin-bottom: 4vw;;
     }
     
     .right {
         display: block;
-        margin-bottom: 2vw;
-    }
-    
-    #cover{
         margin-bottom: 2vw;
     }
     
@@ -342,13 +375,7 @@ img[id*="emartes"]{
     }
     
     .photo{
-        width: 11vw;
-        margin-bottom: 5vw;
-    }
-    
-    .photoproject{
-        width: 4vw;
-        margin-bottom: 5vw;
+        margin-bottom: var(--padding);
     }
     
     #previous{
@@ -363,20 +390,37 @@ img[id*="emartes"]{
     footer {
         position: fixed;
         bottom: 3vw;
-        z-index: 200;
+        z-index: -100;
+        mix-blend-mode: difference;
     }
     
     #resume{
-        display: inherit;
+        display: block;
         height: auto;
+    }
+    
+    .G{
+        font-size: 2.1em;
+    }
+    
+    .P{
+        font-size: .92em;
     }
 }
 
 @media only screen and (max-width: 700px){
-    .cover-left, .cover-right {
-        width: 100%;
+    .capas{
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    .capas:hover{
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    
+    #projetos{
         display: block;
-        float: inherit;
-        margin-bottom: 4vw;
     }
 }
