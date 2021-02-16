@@ -17,11 +17,22 @@ padding:0;
 img{
     display: block;
     max-width: 100%;
-    border-radius: 10px;
+    -moz-transition: all 0.8s;
+	-webkit-transition: all 0.8s;
+	transition: all 0.8s;
 }
 
 video{
-    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+    border-radius: var(--border);
+    -moz-transition: all 0.8s;
+	-webkit-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+iframe{
+    border-radius: var(--border);
 }
 
 ul{
@@ -60,12 +71,13 @@ body.en :lang(pt) {
 }
 
 :root{
-    --corclara: #F3F3F3;
+    --corclara: #F8F8F8;
     --corescura: #2C2C2C;
     --bottom-margin: 1.5vw;
     --margin: 3vw;
     --padding: 2.5vw;
     --imagespace: 1.5vh;
+    --border: 8px;
 }
 
 /*-----------------COLORS-----------------*/
@@ -83,7 +95,7 @@ body.en :lang(pt) {
 /*-----------------MAIN-----------------*/
 
 body {
-    font-family: Work Sans;
+    font-family: Work Sans, sans-serif;
     font-weight: 400;
     color: var(--corescura);
     background-color: var(--corclara);
@@ -92,13 +104,13 @@ body {
 
 .content{
     display: grid;
-    grid-template-columns: 17% auto;
+    grid-template-columns: calc(100vw / 6) auto;
     grid-gap: 4.5vw;
     grid-template-rows: calc(100vh - var(--margin));
 }
 
 .left{
-    width: 17%;
+    width: calc(100vw / 6);
     position: fixed;
 }
 
@@ -113,13 +125,19 @@ body {
 
 #projetos{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--imagespace);
+    grid-row-gap: 100px;
     padding-bottom: calc(var(--padding) - var(--imagespace));
+    align-items: center;
 }
 
 /*-----------------TEXT-----------------*/
 
+#bold{
+    font-weight: 600;
+}
 
 #destaque{
     font-weight: 600;
@@ -151,33 +169,37 @@ a{
 .PP{
     line-height: 1.2em;
     font-size: 0.7em;
-    letter-spacing: -0.01em;
 }
 
 .P{
-    font-size: .92em;
-    line-height: 1.35em;
-/*    letter-spacing: -0.01em;*/
-
+    font-size: .9em;
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
 }
 
 .M{
-    font-size: 1.5em;
+    font-size: .9em;
     line-height: 1.2em;
-/*    letter-spacing: -0.03em;*/
+    font-weight: 600;
+}
+
+.MM{
+    font-size: .9em;
+    line-height: 1.2em;
+    font-weight: 400;
 }
 
 .G{
     font-size: 2.1em;
     line-height: 1em;
-/*    letter-spacing: -0.05em;*/
+    letter-spacing: -0.02em;
     font-weight: 450;
 }
 
 .GG{
     font-size: 5em;
     line-height: 1.25em;
-/*    letter-spacing: -0.05em;*/
+    letter-spacing: -0.05em;
 }
 
 /*
@@ -187,23 +209,7 @@ footer{
 }
 */
 
-#previous{
-    float: left;
-    padding-bottom: 2vw;
-}
-
-#next{
-    float: right;
-    padding-bottom: 2vw;
-}
-
 /*-----------------IMAGE-----------------*/
-
-/*
-img{
-    border-radius: 10px;
-}
-*/
 
 .photo{
     display: flex;
@@ -234,6 +240,7 @@ img{
     position: relative;
 	overflow: hidden;
     display: inline;
+    border-radius: var(--border);
 }
 
 .imageproject{
@@ -241,43 +248,61 @@ img{
     margin-bottom: var(--imagespace);
     max-height: 980px;
     object-fit: scale-down;
+    border-radius: var(--border);
 }
 
 .imageproject-right{
+    border-radius: var(--border);
     float: right;
+    border-radius: var(--border);
 }
 
 .imageproject-left{
+    border-radius: var(--border);
     float: left;
+    border-radius: var(--border);
 }
 
 .imageproject-center{
+    border-radius: var(--border);
     display: block;
-    margin: auto;
+    width: auto;
     max-height: 1080px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #center{
     padding-bottom: calc(var(--padding) - var(--imagespace));
 }
 
-#cover-left{
+/*
+.cover-left{
     grid-column-start: 1;
 }
 
-#cover-right{
+.cover-center{
     grid-column-start: 2;
 }
 
-#cover{
-    width: 100%;
+.cover-right{
+    grid-column-start: 3;
+}
+*/
+
+.cover{
+    max-width: 700px;
+    object-fit: scale-down;
+    border-radius: var(--border);
+    margin-bottom: calc(var(--bottom-margin) / 4);
     z-index: -100;
-/*    margin-bottom: calc(var(--bottom-margin) / 4);*/
-    -moz-transition: all 0.8s;
-	-webkit-transition: all 0.8s;
-	transition: all 0.8s;
+    overflow: hidden;
+    -moz-transition: all 0.8s ease;
+	-webkit-transition: all 0.8s ease;
+	transition: all 0.8s ease;
 }
 
+/*
 .text{
     position: absolute;
     bottom: 30px;
@@ -287,22 +312,26 @@ img{
     color: white;
     text-align: center;
 }
+*/
 
 [class*="capas"]{
-/*    margin-bottom: var(--bottom-margin);*/
     margin-bottom: var(--imagespace);
     display: block;
-    position: relative;
-	overflow: hidden;
-    -moz-transition: all 0.8s ease;
-	-webkit-transition: all 0.8s ease;
-	transition: all 0.8s ease;
 }
 
-.capas:hover{
+.cover:hover img{
+    object-fit: contain;
+    filter: saturate(100%);
     -moz-transform: scale(1.03);
     -webkit-transform: scale(1.03);
-    transform: scale(1.02);
+    transform: scale(1.03);  
+}
+
+.cover:hover video{
+    filter: saturate(100%);
+    -moz-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);  
 }
 
 /*-----------------HOVER-----------------*/
@@ -405,7 +434,7 @@ img[id*="emartes"]{
         position: fixed;
         bottom: var(--padding);
         z-index: -100;
-        mix-blend-mode: difference;
+/*        mix-blend-mode: exclusion;*/
     }
     
     #resume{
@@ -422,18 +451,29 @@ img[id*="emartes"]{
     }
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 900px){
     :root{
-        --padding: 5vw;
+        --padding: 3vw;
     }
     
-    .capas{
-        margin-bottom: var(--padding);
+    img{
         -moz-transform: none;
         -webkit-transform: none;
         transform: none;
     }
-    .capas:hover{
+    
+    .cover{
+        margin-bottom: 1vw;
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    .cover:hover img{
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+    .cover:hover video{
         -moz-transform: none;
         -webkit-transform: none;
         transform: none;
@@ -441,5 +481,10 @@ img[id*="emartes"]{
     
     #projetos{
         display: block;
+        margin-bottom: var(--padding);
+    }
+    
+    #center{
+        padding-bottom: var(--padding);
     }
 }
