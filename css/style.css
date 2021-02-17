@@ -252,15 +252,15 @@ footer{
 }
 
 .imageproject-right{
+    display: block;
     border-radius: var(--border);
     float: right;
-    border-radius: var(--border);
 }
 
 .imageproject-left{
+    display: block;
     border-radius: var(--border);
     float: left;
-    border-radius: var(--border);
 }
 
 .imageproject-center{
@@ -273,7 +273,8 @@ footer{
 }
 
 #center{
-    padding-bottom: calc(var(--padding) - var(--imagespace));
+    margin-bottom: calc(var(--padding) - var(--imagespace));
+    display: block;
 }
 
 /*
@@ -400,6 +401,7 @@ img[id*="emartes"]{
     
     .right {
         display: block;
+        margin-bottom: calc(var(--padding) - var(--imagespace));
     }
     
     .capas{
