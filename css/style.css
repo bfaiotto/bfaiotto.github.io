@@ -117,10 +117,6 @@ body {
 
 .right{
     grid-column-start: 2;
-/*
-    text-align: center;
-    position: relative;
-*/
 }
 
 #projetos{
@@ -131,6 +127,10 @@ body {
     grid-row-gap: 100px;
     padding-bottom: calc(var(--padding) - var(--imagespace));
     align-items: center;
+}
+
+#center{
+    padding-bottom: calc(var(--padding) - var(--imagespace));
 }
 
 /*-----------------TEXT-----------------*/
@@ -252,15 +252,15 @@ footer{
 }
 
 .imageproject-right{
-    display: block;
-    border-radius: var(--border);
     float: right;
+    border-radius: var(--border);
+    display: block;
 }
 
 .imageproject-left{
-    display: block;
-    border-radius: var(--border);
     float: left;
+    border-radius: var(--border);
+    display: block;
 }
 
 .imageproject-center{
@@ -270,11 +270,6 @@ footer{
     max-height: 1080px;
     margin-left: auto;
     margin-right: auto;
-}
-
-#center{
-    margin-bottom: calc(var(--padding) - var(--imagespace));
-    display: block;
 }
 
 /*
@@ -375,6 +370,10 @@ img[id*="emartes"]{
     .P{
         font-size: .9em;
         line-height: 1.2em;
+    }
+    
+    #imageproject-left{
+        margin-bottom: calc(var(--padding) - var(--imagespace));
     }
 }
 
