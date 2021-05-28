@@ -274,7 +274,7 @@ footer{
 }
 
 .imageproject-first{
-    height: 900px;
+    max-height:  900px;
     margin-bottom: var(--margin);
     display: block;
     width: auto;
@@ -458,7 +458,7 @@ img[id*="emartes"]{
     }
     
     .P{
-        font-size: .92em;
+        font-size: .9em;
     }
 }
 
