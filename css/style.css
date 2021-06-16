@@ -127,6 +127,7 @@ body {
     grid-row-gap: 100px;
     padding-bottom: calc(var(--padding) - var(--imagespace));
     align-items: center;
+    grid-template-rows: masonry;
 }
 
 #center{
@@ -297,6 +298,7 @@ footer{
 */
 
 .cover{
+    break-inside: avoid;
     max-height: 885px;
     object-fit: scale-down;
     justify-content: center;
@@ -324,6 +326,7 @@ footer{
 [class*="capas"]{
     margin-bottom: var(--imagespace);
     display: block;
+    break-inside: avoid;
 }
 
 .cover:hover img{
