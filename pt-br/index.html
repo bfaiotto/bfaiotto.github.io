@@ -172,19 +172,6 @@
             </div>
         </div>
     </body>
-
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-
-    <!-- cdnjs -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
-        $('.lazy').Lazy();
-        });
-    </script>
     <script type="text/javascript">
         function resizeGridItem(item){
   grid = document.getElementsByClassName("grid")[0];
@@ -213,6 +200,19 @@ allItems = document.getElementsByClassName("item");
 for(x=0;x<allItems.length;x++){
   imagesLoaded( allItems[x], resizeInstance);
 }
-    
     </script>
+    
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
+    <!-- cdnjs -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+        $('.lazy').Lazy();
+        });
+    </script>
+
 </html>
