@@ -1,3 +1,10 @@
+.grid{
+    display: grid;
+    grid-gap: var(--imagespace);
+    grid-template-columns: repeat(auto-fill, minmax(560px,3fr));
+    grid-auto-rows: var(--imagespace);
+}
+
 *{
 margin:0;
 padding:0;
@@ -73,10 +80,10 @@ body.en :lang(pt) {
 :root{
     --corclara: #F8F8F8;
     --corescura: #2C2C2C;
-    --bottom-margin: 20px;
+    --bottom-margin: 30px;
     --margin: 17px;
     --padding: 20px;
-    --imagespace: 20px;
+    --imagespace: 15px;
     --border: 10px;
 }
 
@@ -107,6 +114,7 @@ body {
     grid-template-columns: calc(100vw / 6) auto;
     grid-gap: 1.5vw;
     grid-template-rows: calc(100vh - var(--margin));
+        
 }
 
 .left{
@@ -118,6 +126,7 @@ body {
 
 .right{
     grid-column-start: 2;
+
 }
 
 #projetos{
@@ -263,7 +272,6 @@ a{
     border-radius: var(--border);
     display: block;
     width: auto;
-    max-height: 1080px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -361,6 +369,12 @@ img[id*="emartes"]{
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+    .grid{
+    display: grid;
+    grid-gap: var(--imagespace);
+    grid-template-columns: repeat(auto-fill, minmax(500px,3fr));
+    grid-auto-rows: var(--imagespace);
+}
     
     .left{
         overflow-y: scroll;
@@ -381,11 +395,6 @@ img[id*="emartes"]{
     
     #imageproject-left{
         margin-bottom: calc(var(--padding) - var(--imagespace));
-    }
-    
-    #projetos{
-        grid-gap: var(--padding);
-        grid-template-columns: repeat(2, 1fr);
     }
     
     .content{
@@ -525,7 +534,7 @@ img[id*="emartes"]{
         transform: none;
     }
     
-    #projetos{
+    .grid{
         display: block;
         margin-bottom: var(--padding);
     }
