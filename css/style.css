@@ -2,7 +2,7 @@
     display: grid;
     grid-gap: var(--imagespace);
     grid-template-columns: repeat(auto-fill, minmax(560px,3fr));
-    grid-auto-rows: var(--imagespace);
+    grid-auto-rows: 5px;
 }
 
 *{
@@ -541,5 +541,9 @@ img[id*="emartes"]{
     
     #center{
         padding-bottom: var(--padding);
+    }
+    
+    #profile{
+        margin-bottom: var(--bottom-margin);
     }
 }
