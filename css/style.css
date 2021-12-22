@@ -80,7 +80,7 @@ body.en :lang(pt) {
 :root{
     --corclara: #F8F8F8;
     --corescura: #2C2C2C;
-    --bottom-margin: 30px;
+    --bottom-margin: 40px;
     --margin: 17px;
     --padding: 20px;
     --imagespace: 15px;
@@ -150,6 +150,7 @@ body {
 
 #bold{
     font-weight: 600;
+    letter-spacing: 0.005em;
 }
 
 #destaque{
@@ -173,44 +174,50 @@ a{
     opacity: 50%;
 }
 
-.PPP{
-    line-height: 1.2em;
-    font-size: 0.6em;
-    letter-spacing: -0.01em;
-}
-
 .PP{
+    font-size: 8.5pt;
     line-height: 1.2em;
-    font-size: 0.7em;
 }
 
 .P{
-    font-size: .9em;
+    font-size: 10.5pt;
     line-height: 1.3em;
     letter-spacing: -0.01em;
 }
 
+.PH{
+    font-size: 10.5pt;
+    line-height: 1.3em;
+    letter-spacing: -0.01em;
+}
+
+.PM{
+    font-size: 10.8pt;
+    letter-spacing: 0.005em;
+    font-weight: 600;
+}
+
 .M{
-    font-size: .9em;
+    font-size: 10.5pt;
     line-height: 1.2em;
     font-weight: 600;
 }
 
 .MM{
-    font-size: .9em;
+    font-size: 10.5pt;
     line-height: 1.2em;
     font-weight: 400;
 }
 
 .G{
-    font-size: 2.1em;
+    font-size: 20pt;
     line-height: 1em;
     letter-spacing: -0.02em;
-    font-weight: 450;
+    font-weight: 500;
 }
 
 .GG{
-    font-size: 5em;
+    font-size: 40pt;
     line-height: 1.25em;
     letter-spacing: -0.05em;
 }
@@ -229,7 +236,7 @@ a{
     align-items: baseline;
 }
 
-.photoproject{
+.margin{
     margin-bottom: var(--padding)
 }
 
@@ -384,14 +391,6 @@ img[id*="emartes"]{
         margin: var(--padding) 0;
     }
     
-    .G{
-        font-size: 1.5em;
-    }
-    
-    .P{
-        font-size: .9em;
-        line-height: 1.2em;
-    }
     
     #imageproject-left{
         margin-bottom: calc(var(--padding) - var(--imagespace));
@@ -495,7 +494,7 @@ img[id*="emartes"]{
     footer {
         position: fixed;
         bottom: var(--padding);
-        z-index: -100;
+        z-index: 200;
     }
     
     #resume{
@@ -503,13 +502,6 @@ img[id*="emartes"]{
         height: auto;
     }
     
-    .G{
-        font-size: 2.1em;
-    }
-    
-    .P{
-        font-size: .9em;
-    }
     
     img{
         -moz-transform: none;
