@@ -2,7 +2,7 @@
     display: grid;
     grid-gap: var(--imagespace);
     grid-template-columns: repeat(auto-fill, minmax(560px,3fr));
-    grid-auto-rows: 5px;
+    grid-auto-rows: var(--imagespace);
 }
 
 *{
@@ -81,9 +81,9 @@ body.en :lang(pt) {
     --corclara: #F8F8F8;
     --corescura: #2C2C2C;
     --bottom-margin: 40px;
-    --margin: 17px;
-    --padding: 20px;
-    --imagespace: 15px;
+    --margin: 15px;
+    --padding: 25px;
+    --imagespace: 10px;
     --border: 10px;
 }
 
@@ -113,20 +113,19 @@ body {
     display: grid;
     grid-template-columns: calc(100vw / 6) auto;
     grid-gap: 1.5vw;
-    grid-template-rows: calc(100vh - var(--margin));
+    grid-template-rows: calc(100vh - var(--padding));
         
 }
 
 .left{
     width: calc(100vw / 6);
     position: fixed;
-    top: var(--margin);
-    bottom: var(--margin);
+    top: var(--padding);
+    bottom: var(--padding);
 }
 
 .right{
     grid-column-start: 2;
-
 }
 
 #projetos{
@@ -223,8 +222,8 @@ a{
 }
 
     footer{
-    position: fixed;
-    bottom: var(--margin);
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -255,11 +254,13 @@ a{
     border-radius: var(--border);
 }
 
+.horizontal{
+    max-height: 960px;
+    width: auto;
+}
+
 .imageproject{
-    width: 100%;
     margin-bottom: var(--imagespace);
-    max-height: 980px;
-    object-fit: scale-down;
     border-radius: var(--border);
 }
 
@@ -277,15 +278,11 @@ a{
 
 .imageproject-center{
     border-radius: var(--border);
-    display: block;
-    width: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
 .imageproject-first{
-
-    margin-bottom: var(--margin);
     display: block;
     width: auto;
     margin-left: auto;
