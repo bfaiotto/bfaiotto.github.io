@@ -5,6 +5,13 @@
     grid-auto-rows: var(--imagespace);
 }
 
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-style: solid;
+  border-color: #A8A8A8;
+}
+
 *{
 margin:0;
 padding:0;
@@ -102,8 +109,8 @@ body.en :lang(pt) {
 /*-----------------MAIN-----------------*/
 
 body {
-    font-family: Work Sans, sans-serif;
-    font-weight: 400;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 500;
     color: var(--corescura);
     background-color: var(--corclara);
     padding: var(--padding);
@@ -148,14 +155,14 @@ body {
 
 
 #bold{
-    font-weight: 600;
-    letter-spacing: 0.005em;
+    font-weight: 700;
 }
 
 #destaque{
-    font-weight: 600;
+    font-weight: 700;
     border-style: solid;
     border-width: 0 0 2px 0;
+    border-color: #4A4A4A;
 }
 
 
@@ -167,6 +174,7 @@ a{
 #link{
     border-style: solid;
     border-width: 0 0 1px 0;
+    border-color: #A8A8A8;
 }
 
 #link:hover{
@@ -179,40 +187,43 @@ a{
 }
 
 .P{
-    font-size: 10.5pt;
+    font-size: 10.8pt;
     line-height: 1.3em;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.04em;
 }
 
 .PH{
-    font-size: 10.5pt;
+    font-size: 10.8pt;
     line-height: 1.3em;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.04em;
 }
 
 .PM{
     font-size: 10.8pt;
-    letter-spacing: 0.005em;
-    font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: 0.04em;
+    font-weight: 700;
 }
 
 .M{
-    font-size: 10.5pt;
-    line-height: 1.2em;
+    font-size: 10.8pt;
+    line-height: 1.3em;
+    letter-spacing: 0.04em;
     font-weight: 600;
 }
 
 .MM{
-    font-size: 10.5pt;
-    line-height: 1.2em;
+    font-size: 10.8pt;
+    line-height: 1.3em;
+    letter-spacing: 0.04em;
     font-weight: 400;
 }
 
 .G{
     font-size: 20pt;
-    line-height: 1em;
+    line-height: 1.25em;
     letter-spacing: -0.02em;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .GG{
