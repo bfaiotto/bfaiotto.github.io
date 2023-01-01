@@ -1,8 +1,15 @@
 .grid{
     display: grid;
     grid-gap: var(--imagespace);
-    grid-template-columns: repeat(auto-fill, minmax(400px,4fr));
+    grid-template-columns: repeat(auto-fill, minmax(560px,3fr));
     grid-auto-rows: var(--imagespace);
+}
+
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-style: solid;
+  border-color: #A8A8A8;
 }
 
 *{
@@ -23,6 +30,7 @@ padding:0;
 
 img{
     display: block;
+    box-shadow: 10px 0px 80px;
     max-width: 100%;
     -moz-transition: all 0.8s;
 	-webkit-transition: all 0.8s;
@@ -82,8 +90,8 @@ body.en :lang(pt) {
     --corescura: #2C2C2C;
     --bottom-margin: 40px;
     --margin: 15px;
-    --padding: 25px;
-    --imagespace: 10px;
+    --padding: 30px;
+    --imagespace: 15px;
     --border: 10px;
 }
 
@@ -102,8 +110,8 @@ body.en :lang(pt) {
 /*-----------------MAIN-----------------*/
 
 body {
-    font-family: Work Sans, sans-serif;
-    font-weight: 400;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 300;
     color: var(--corescura);
     background-color: var(--corclara);
     padding: var(--padding);
@@ -117,12 +125,22 @@ body {
         
 }
 
+.left{
+    width: calc(100vw / 6);
+    position: fixed;
+    top: var(--padding);
+    bottom: var(--padding);
+}
+
+.right{
+    grid-column-start: 2;
+}
+
 #projetos{
     display: grid;
     grid-auto-flow: row dense;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--imagespace);
-    /*grid-row-gap: 100px;*/
     padding-bottom: calc(var(--padding) - var(--imagespace));
     align-items: center;
     grid-template-rows: mansory;
@@ -137,14 +155,14 @@ body {
 
 
 #bold{
-    font-weight: 600;
-    letter-spacing: 0.005em;
+    font-weight: 500;
 }
 
 #destaque{
-    font-weight: 600;
+    font-weight: 500;
     border-style: solid;
     border-width: 0 0 2px 0;
+    border-color: #4A4A4A;
 }
 
 
@@ -156,6 +174,7 @@ a{
 #link{
     border-style: solid;
     border-width: 0 0 1px 0;
+    border-color: #A8A8A8;
 }
 
 #link:hover{
@@ -168,38 +187,41 @@ a{
 }
 
 .P{
-    font-size: 10.5pt;
+    font-size: 10.8pt;
     line-height: 1.3em;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
 }
 
 .PH{
-    font-size: 10.5pt;
+    font-size: 10pt;
     line-height: 1.3em;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
 }
 
 .PM{
-    font-size: 10.8pt;
-    letter-spacing: 0.005em;
-    font-weight: 600;
+    font-size: 10pt;
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+    font-weight: 500;
 }
 
 .M{
-    font-size: 10.5pt;
-    line-height: 1.2em;
-    font-weight: 600;
+    font-size: 10pt;
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+    font-weight: 500;
 }
 
 .MM{
-    font-size: 10.5pt;
-    line-height: 1.2em;
-    font-weight: 400;
+    font-size: 10pt;
+    line-height: 1.3em;
+    letter-spacing: 0.01em;
+    font-weight: 300;
 }
 
 .G{
     font-size: 20pt;
-    line-height: 1em;
+    line-height: 1.25em;
     letter-spacing: -0.02em;
     font-weight: 500;
 }
@@ -293,6 +315,7 @@ a{
 */
 
 .cover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     break-inside: avoid;
     max-height: 885px;
     object-fit: scale-down;
