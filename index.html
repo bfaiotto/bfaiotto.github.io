@@ -80,7 +80,7 @@
                     </div>
                 </div>
             <div class="right">
-                <div class="grid M">
+                <div class="M" id="macy-container">
                     
             <div class="item"> 
                 <div class="contents">
@@ -90,31 +90,25 @@
                     
             <div class="item"> 
                 <div class="contents">
-                    <a class="capas" href="AKQA-Impact/"><div class="cover"><img src="AKQA-Impact/img/AKQA_3.png"/></div><figcaption class="text">AKQA•Impact<span class="MM"> / Illustration, 3D</span></figcaption></a>
+                    <a class="capas" href="AKQA-Impact/"><div class="cover"><img src="AKQA-Impact/img/AKQA_5.png"/></div><figcaption class="text">AKQA•Impact<span class="MM"> / Illustration, 3D</span></figcaption></a>
                 </div>
             </div>
                     
             <div class="item"> 
                 <div class="contents">
-                    <a class="capas" href="Stone-Peace/"><div class="cover"><img src="Stone-Peace/img/STONE_Paz_0007_APP+JURIDICA.png"/></div><figcaption class="text">Stone "Peace"<span class="MM"> / Illustration, 3D</span></figcaption></a>
+                    <a class="capas" href="Stone-Peace/"><div class="cover"><img src="Stone-Peace/img/STONE_Paz_0007_CARD_FISICA.png"/></div><figcaption class="text">Stone "Peace"<span class="MM"> / Illustration, 3D</span></figcaption></a>
                 </div>
             </div>
             
             <div class="item"> 
                 <div class="contents">
-                    <a class="capas" href="Stone-Animations/"><div class="cover"><img src="Stone-Animations/img/STONE_Paz_cartoes_0008_FISICA.png"/></div><figcaption class="text">Stone Animations<span class="MM"> / Illustration, 3D, Motion</span></figcaption></a>
+                    <a class="capas" href="Stone-Animations/"><div class="cover"><img src="Stone-Animations/img/STONE_Paz_cartoes_0008_JURIDICA_1.png"/></div><figcaption class="text">Stone Animations<span class="MM"> / Illustration, 3D, Motion</span></figcaption></a>
                 </div>
             </div>
             
             <div class="item">
-                <div class="contents">    
-                    <a class="capas" href="Rest/"><div class="cover"><img src="Rest/img/COMP_descanso_0001_noon.png"></div><figcaption class="text">Rest<span class="MM"> / Illustration, 3D</span></figcaption ></a>
-                </div>    
-            </div>
-            
-            <div class="item">
                 <div class="contents">     
-                    <a class="capas" href="Imagery/"><div class="cover"><img src="Imagery/img/earth_0002_Apple_COMP.png" /></div><figcaption class="text">Imagery<span class="MM"> / Illustration, 3D</span></figcaption></a>
+                    <a class="capas" href="Imagery/"><div class="cover"><img src="Imagery/img/finding_0001_COMP.png" /></div><figcaption class="text">Imagery<span class="MM"> / Illustration, 3D</span></figcaption></a>
                 </div>    
             </div>
             
@@ -150,7 +144,7 @@
             
             <div class="item">
                 <div class="contents">
-                    <a class="capas" href="Bacio-di-Latte-Mercado/"><div class="cover"><img src="Bacio-di-Latte-Mercado/img/baciocover.png"/></div><figcaption class="text">Bacio di Latte - Casa <span class="MM"> / Graphic Design, Packaging, 3D</span></figcaption ></a>
+                    <a class="capas" href="Bacio-di-Latte-Mercado/"><div class="cover"><img src="Bacio-di-Latte-Mercado/img/bacio1.png"/></div><figcaption class="text">Bacio di Latte - Casa <span class="MM"> / Graphic Design, Packaging, 3D</span></figcaption ></a>
                 </div>    
             </div>
             
@@ -189,48 +183,38 @@
         </div>
     </body>
 
-    <script type="text/javascript">
-        function resizeGridItem(item){
-  grid = document.getElementsByClassName("grid")[0];
-  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-  rowSpan = Math.ceil((item.querySelector('.contents').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-    item.style.gridRowEnd = "span "+rowSpan;
-}
-
-function resizeAllGridItems(){
-  allItems = document.getElementsByClassName("item");
-  for(x=0;x<allItems.length;x++){
-    resizeGridItem(allItems[x]);
-  }
-}
-
-function resizeInstance(instance){
-  item = instance.elements[0];
-  resizeGridItem(item);
-}
-
-window.onload = resizeAllGridItems();
-window.addEventListener("resize", resizeAllGridItems);
-
-allItems = document.getElementsByClassName("item");
-for(x=0;x<allItems.length;x++){
-  imagesLoaded( allItems[x], resizeInstance);
-}
-    
-    </script>
-    
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
     <!-- cdnjs -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    
+<script>$(function() {
         $('.lazy').Lazy();
         });
-    </script>
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <script>
+        var masonry = new Macy({
+            container: '#macy-container',
+            trueOrder: false,
+            waitForImages: false,
+            useOwnImageLoader: false,
+            debug: true,
+            mobileFirst: true,
+            columns: 2,
+            margin: {
+                y: 15,
+                x: 15,
+            },
+            breakAt: {
+                1600: 3,
+                1000: 2,
+                700: 2,
+                400: 1
+            },
+        });
+</script>
     
 </html>
