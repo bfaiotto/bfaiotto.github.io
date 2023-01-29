@@ -74,6 +74,7 @@ body.en :lang(pt) {
 :root{
     --corclara: #F8F8F8;
     --corescura: #717171;
+    --cordestaque: red;
     --margin: 15px;
     --padding: 30px;
     --imagespace: 15px;
@@ -113,7 +114,7 @@ body {
 
 /*-----------------TEXT-----------------*/
 footer{
-    background-color: coral;
+    background-color: var(--cordestaque);
     position: fixed;
     padding-left: inherit;
     padding-right: inherit;
@@ -151,7 +152,7 @@ a{
 }
 
 #link:hover{
-    color: coral;
+    color: var(--cordestaque);
 }
 
 .PP{
@@ -175,6 +176,21 @@ a{
 .G{
     font-size: 20pt;
     font-weight: 500;
+}
+
+.title{
+    line-height: inherit;
+    width: 210px;
+}
+
+.title:hover    {
+    font-family: "nautica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.2em;
+    font-size: 25pt;
+    color: var(--cordestaque);
 }
 
 /*-----------------IMAGE-----------------*/
@@ -248,7 +264,7 @@ a{
 	transition: all 1s ease;
 }
 
-@media only screen and (max-width: 940px){
+@media only screen and (max-width: 700px){
     
     #profile{
     display: grid;
@@ -270,6 +286,13 @@ a{
     .imageproject-left{
         width: 100%;
         margin-bottom: var(--padding);
+    }
+    
+    .footer{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr;
+    color: black;
     }
 
     }

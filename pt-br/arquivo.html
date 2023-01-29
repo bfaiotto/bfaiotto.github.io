@@ -34,7 +34,7 @@
     <body class="en">
         <p class="title P">
             <div><p class="margin P"><a id="link"a href="../pt-br/">Bruno Faiotto</a> <footer>© Bruno Faiotto 2021</footer></div>
-        <div class="grid M">
+        <div class="M" id="macy-container">
             
             <div class="item"> 
                 <div class="contents">
@@ -155,46 +155,38 @@
         </div>
     </body>
 
-    <script type="text/javascript" src="../..///cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="../..///cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
     <!-- cdnjs -->
-    <script type="text/javascript" src="../..///cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="../..///cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    
+<script>$(function() {
         $('.lazy').Lazy();
         });
-    </script>
-    <script type="text/javascript">
-        function resizeGridItem(item){
-  grid = document.getElementsByClassName("grid")[0];
-  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-  rowSpan = Math.ceil((item.querySelector('.contents').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-    item.style.gridRowEnd = "span "+rowSpan;
-}
-
-function resizeAllGridItems(){
-  allItems = document.getElementsByClassName("item");
-  for(x=0;x<allItems.length;x++){
-    resizeGridItem(allItems[x]);
-  }
-}
-
-function resizeInstance(instance){
-  item = instance.elements[0];
-  resizeGridItem(item);
-}
-
-window.onload = resizeAllGridItems();
-window.addEventListener("resize", resizeAllGridItems);
-
-allItems = document.getElementsByClassName("item");
-for(x=0;x<allItems.length;x++){
-  imagesLoaded( allItems[x], resizeInstance);
-}
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <script>
+        var masonry = new Macy({
+            container: '#macy-container',
+            trueOrder: false,
+            waitForImages: false,
+            useOwnImageLoader: false,
+            debug: true,
+            mobileFirst: true,
+            columns: 2,
+            margin: {
+                y: 15,
+                x: 15,
+            },
+            breakAt: {
+                1200: 3,
+                1000: 2,
+                500: 2,
+                300: 1
+            },
+        });
+</script>
     
-    </script>
 </html>
