@@ -20,6 +20,7 @@ padding:0;
 }
 
 img{
+    background-color: var(--cordestaque);
     display: block;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     max-width: 100%;
@@ -43,8 +44,7 @@ ul{
 /*-----------------IDIOMA-----------------*/
 
 .language:hover{
-    border-style: solid;
-    border-width: 0 0 1px 0;
+    text-decoration-line: underline;
     cursor: pointer;
 }
 
@@ -74,7 +74,7 @@ body.en :lang(pt) {
 :root{
     --corclara: #F8F8F8;
     --corescura: #717171;
-    --cordestaque: red;
+    --cordestaque: coral;
     --margin: 15px;
     --padding: 30px;
     --imagespace: 15px;
@@ -126,10 +126,10 @@ footer{
 }
 
 .footer{
+    color: dimgrey;
     display: grid;
     grid-gap: var(--imagespace);
     grid-template-columns: 1fr 1fr;
-    color: black;
 }
 
 #bold{
@@ -137,9 +137,7 @@ footer{
 }
 
 #destaque{
-    font-weight: 500;
-    border-style: solid;
-    border-width: 0 0 2px 0;
+    font-weight: 600;
 }
 
 a{
@@ -250,18 +248,44 @@ a{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.capas{
+.item{
+    background-color: var(--cordestaque);
+}
+
+
+.capas img{
     filter: saturate(100%) contrast(1);
     -moz-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
 
-.capas:hover {
-    filter: saturate(2000%) contrast(100);
+.capas:hover img{
+    filter: saturate(500%) contrast(10);
     -moz-transition: all 1s ease;
 	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
+    mix-blend-mode: saturation;
+}
+
+.hide{
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+    font-family: "nautica", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.2em;
+    font-size: 40pt;
+}
+
+.capas:hover .hide{
+    z-index: 100;
 }
 
 @media only screen and (max-width: 700px){
