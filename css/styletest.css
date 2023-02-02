@@ -1,3 +1,10 @@
+.content{
+    max-width: 1920px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .html{
     overflow: auto;
     -moz-scrollbars-none;
@@ -48,12 +55,6 @@ ul{
     cursor: pointer;
 }
 
-.language: click{
-    display: none;
-    display: article;
-    will-change: contents;
-}
-
 /*
 body.pt :lang(en) { 
     display: none; 
@@ -74,7 +75,7 @@ body.en :lang(pt) {
 :root{
     --corclara: #F8F8F8;
     --corescura: #717171;
-    --cordestaque: coral;
+    --cordestaque: gold;
     --margin: 15px;
     --padding: 30px;
     --imagespace: 15px;
@@ -89,28 +90,24 @@ body {
     color: var(--corescura);
     background-color: var(--corclara);
     padding: var(--padding);
-    text-transform: uppercase;
-}
-
-#center{
-    display: table;
-    padding-bottom: calc(var(--padding) - calc(var(--imagespace)/2));
+    text-rendering: auto;
 }
 
 #profile{
     display: grid;
     grid-gap: var(--imagespace);
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: calc(2*var(--margin));
 }
 
 #left{
-        float: left;
-    }
+    float: left;
+}
     
 #right{
-        float: right;
-    }
+    float: right;
+    height: 100%;
+}
 
 /*-----------------TEXT-----------------*/
 footer{
@@ -126,10 +123,11 @@ footer{
 }
 
 .footer{
-    color: dimgrey;
+    color:var(--corescura);
     display: grid;
     grid-gap: var(--imagespace);
     grid-template-columns: 1fr 1fr;
+    text-transform: uppercase;
 }
 
 #bold{
@@ -155,12 +153,12 @@ a{
 
 .PP{
     color: #B0B0B0;
+    text-transform: uppercase;
 }
 
 .P{
     font-size: 12pt;
     line-height: 1.25em;
-    letter-spacing: 0.01em;
 }
 
 .M{
@@ -169,12 +167,25 @@ a{
     letter-spacing: 0.01em;
     line-height: 1.1em;
     margin-bottom: var(--imagespace);
+    text-transform: uppercase;
+}
+
+.MM{
+    font-weight: 400;   
+    text-transform: none;
 }
 
 .G{
     font-size: 20pt;
     font-weight: 500;
+    text-transform: uppercase;
 }
+/*--
+.text{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+--*/
 
 .title{
     line-height: inherit;
@@ -248,75 +259,70 @@ a{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.item{
-    background-color: var(--cordestaque);
+.cover img{
+    filter: blur(0px) contrast(100%) saturate(100%);
+    -moz-transition: all 01s ease;
+	-webkit-transition: all 01s ease;
+	transition: all 01s ease;
 }
 
-
-.capas img{
-    filter: saturate(100%) contrast(1);
+.cover:hover img{
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2); 
+    filter: blur(50px) contrast(200%) saturate(200%) brightness(90%);
+}
+    
+.hide{
+    color: beige;
+    mix-blend-mode: luminosity;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    z-index: -100;
+    text-transform: none;
+    line-height: 1.2em;
+    font-size: 32pt;
+    font-family: "orpheuspro", serif;
+    font-weight: 400;
+    font-style: italic;
     -moz-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-}
-
-.capas:hover img{
-    filter: saturate(500%) contrast(10);
-    -moz-transition: all 1s ease;
-	-webkit-transition: all 1s ease;
-	transition: all 1s ease;
-    mix-blend-mode: saturation;
-}
-
-.hide{
-    color: black;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -100;
-    font-family: "nautica", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    text-transform: none;
-    line-height: 1.2em;
-    font-size: 40pt;
+    
 }
 
 .capas:hover .hide{
     z-index: 100;
+    pointer-events: none;
 }
 
 @media only screen and (max-width: 700px){
     
     #profile{
-    display: grid;
-    grid-gap: var(--imagespace);
     grid-template-columns: 1fr;
-    margin-bottom: 30px;
+    margin-bottom: calc(2*var(--margin));
     }
 
     .imageproject{
         width: 100%;
-        margin-bottom: var(--padding);
     }
 
     .imageproject-right{
         width: 100%;
-        margin-bottom: var(--padding);
     }
 
     .imageproject-left{
         width: 100%;
-        margin-bottom: var(--padding);
     }
     
     .footer{
     display: grid;
     grid-gap: 2px;
     grid-template-columns: 1fr;
-    color: black;
     }
 
     }
